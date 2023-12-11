@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    color: black;
+    text-align: center;
+}
+
+p {
+    padding: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    }
+
+header {
+    height: 100px;
+    background: #beb4c5;
+    font-size: 18pt;
+    padding: 15px;
+}
+
+article {
+    background: #e6a57e;
+    height: auto;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background: #beb4c5;
+    height: 50px;
+    padding: 5px;
+}
+
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  backface-visibility: hidden;
+  border-radius: 5px;
+
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 400px;
+    height: 400px;
+    perspective: 1000px; 
+    margin: 50px;
+    border-radius: 5px;
+
+}
+  
+  .flip-card-inner {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #a1cdce;
+    color: black;
+    padding-top: 40%;
+
+  }
+  
+  .flip-card-back {
+    background-color: #f5bfd2;
+    transform: rotateY(180deg);
+    text-align: left;
+    padding: 20px;
+  }
+
+
+.display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media all and (max-width: 700px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap; 
+   }
+    header, footer {
+        width: 100%;
+    }
+    article {
+        flex: 2;
+        order: 2;
+
+   }
+
+   footer {
+        order: 4;
+   }
+   .flip-card {
+    margin: 10px;
+}
+    }
